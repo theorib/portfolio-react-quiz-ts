@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
 :root {
   --color-darkest: #343a40;
   --color-dark: #495057;
@@ -7,8 +8,6 @@
   --color-theme: #1098ad;
   --color-accent: #ffa94d;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
 
 * {
   margin: 0;
@@ -27,25 +26,55 @@ body {
   color: var(--color-light);
   background-color: var(--color-darkest);
   padding: 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr;
 }
-
+#root {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 .app {
   display: flex;
   flex-direction: column;
+  /* align-items: stretch; */
   align-items: center;
   justify-content: center;
 }
 
 .main {
-  width: 50rem;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: calc(10vw);
 }
 
-.app-header {
+/* .app-header {
   width: 66rem;
   margin-bottom: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+} */
+.header {
+  align-self: stretch;
+  justify-content: center;
+  display: flex;
+}
+
+.header-title {
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  align-self: stretch;
+  margin-bottom: calc(4vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .error {
@@ -58,29 +87,29 @@ body {
 }
 
 img {
-  width: 14rem;
+  width: calc(1rem + 10vw);
 }
 
 h1 {
   font-family: 'Codystar';
-  font-size: 5.6rem;
+  font-size: calc(7.5vw);
 }
 
 h2 {
-  font-size: 3.6rem;
-  margin-bottom: 2rem;
+  font-size: calc(5.5vw);
+  margin-bottom: calc(4vw);
 }
 
 h3 {
-  font-size: 2.4rem;
   font-weight: 600;
-  margin-bottom: 4rem;
+  font-size: calc(4vw);
+  margin-bottom: calc(8vw);
 }
 
 h4 {
-  font-size: 2.2rem;
   font-weight: 600;
-  margin-bottom: 2.4rem;
+  font-size: calc(4vw);
+  margin-bottom: calc(5vw);
 }
 
 .start {
@@ -120,7 +149,7 @@ progress {
   display: block;
   font-family: inherit;
   color: inherit;
-  font-size: 2rem;
+  font-size: calc(4vw);
   border: 2px solid var(--color-dark);
   background-color: var(--color-dark);
   padding: 1.2rem 2.4rem;
@@ -128,7 +157,40 @@ progress {
   border-radius: 100px;
   transition: 0.3s;
 }
-
+@media (min-width: 750px) {
+  .app {
+    align-items: center;
+  }
+  .main {
+    width: 50rem;
+  }
+  .header-title {
+    width: 66rem;
+    margin-bottom: 4rem;
+  }
+  img {
+    width: 14rem;
+  }
+  h1 {
+    font-size: 5.6rem;
+  }
+  h2 {
+    font-size: 3.6rem;
+    margin-bottom: 2rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+    margin-bottom: 4rem;
+  }
+  h4 {
+    font-size: 2.2rem;
+    margin-bottom: 2.4rem;
+  }
+  .btn {
+    font-size: 2rem;
+    padding: 1.2rem 2.4rem;
+  }
+}
 .btn:not([disabled]):hover {
   background-color: var(--color-darkest);
 }
@@ -177,7 +239,7 @@ progress {
   color: var(--color-light);
   border-radius: 100px;
   text-align: center;
-  padding: 2rem 0;
+  padding: 2rem 3rem;
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 1.6rem;
