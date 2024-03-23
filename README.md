@@ -4,7 +4,7 @@ A quiz app about your React knowledge. Developed as a simple vanilla React Singl
 
 ## Live Demo
 
-Checkout the [Live demo hosted on Netlify](https://the-wild-oasis-delta-flax.vercel.app/) and try out your React knowledge!
+Checkout the [Live demo hosted on Netlify](https://react-quiz-typescript-app.netlify.app) and try out your React knowledge!
 
 | ![App dashboard](/screenshots/Screenshot-1.jpg 'App dashboard') | ![Bookings Page](/screenshots/Screenshot-2.jpg 'Bookings Page') |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |

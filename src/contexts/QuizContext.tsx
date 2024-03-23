@@ -138,7 +138,7 @@ function QuizProvider({ children }: QuizProviderProps) {
 
   useEffect(function () {
     const fetchData = async function () {
-      const response = await fetch('../../data/questions.json');
+      const response = await fetch('/data/questions.json');
       const { questions } = await response.json();
 
       dispatch({ type: 'dataReceived', payload: questions });
