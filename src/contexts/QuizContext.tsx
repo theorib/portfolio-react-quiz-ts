@@ -138,9 +138,10 @@ function QuizProvider({ children }: QuizProviderProps) {
 
   useEffect(function () {
     const fetchData = async function () {
-      const response = await fetch('http://localhost:3001/questions');
-      const data = await response.json();
-      dispatch({ type: 'dataReceived', payload: data });
+      const response = await fetch('../../data/questions.json');
+      const { questions } = await response.json();
+
+      dispatch({ type: 'dataReceived', payload: questions });
     };
     fetchData().catch(error => {
       console.log('running catch');
