@@ -42,7 +42,7 @@ const initialState: State = {
   points: 0,
   highScore: 0,
   secondsRemaining: null,
-  secondsPerQuestion: 20,
+  secondsPerQuestion: 12,
 };
 
 interface QuizContextType extends State {
