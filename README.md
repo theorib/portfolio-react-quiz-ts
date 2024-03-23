@@ -1,30 +1,37 @@
-# React + TypeScript + Vite
+# The React Quiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A quiz app about your React knowledge developed as a simple React Single Page Application (SPA)
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Live demo hosted on Netlify](https://the-wild-oasis-delta-flax.vercel.app/)
 
-## Expanding the ESLint configuration
+## App creation context
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This is one of the intermediary projects I did for the ['The Ultimate React Course 2024: React, Redux & More'](https://www.udemy.com/course/the-ultimate-react-course/) by [Jonas Schmedtmann](https://codingheroes.io/) that I completed on February 15 2024.
 
-- Configure the top-level `parserOptions` property like this:
+I have written all of the React code for this app, usually writting code upfront on my own and then watching the course instructions.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+After the course ended, I converted the app to TypeScript as a practice and made the app styles responsive and mobile first.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Most of the styles for this project where provided by the course instructor [Jonas Schmedtmann](https://codingheroes.io/) and I don't claim any credit for them.
+
+## App description:
+
+This is a Vanilla react app that let's users go through a timed quiz where they answer multiple choice questions. Each correctly answered question awards the user points which summed make their total score. The app allows users to:
+
+- Answer quiz questions choosing answers from pre-defined set of choices
+- Earn points for each correcly answered question
+- Race against time to finish answering all the questions in the quiz
+- Compare themselves against their previous highest score
+
+## libraries and features
+
+- Global state management using React's [Context API](https://react.dev/reference/react/useContext) and [useReducer](https://react.dev/reference/react/useReducer)
+- Built using [Vite](https://vitejs.dev)
+- Quiz questions are fetched from a local file but are set up and ready to be fetched from any API.
+- No external library dependencies apart from [react and react-dom](https://github.com/facebook/react)
+
+## Forking and cloning
+
+This project is ready to work out of the box after cloning/forking and running `npm install` on a terminal window running in your app directory.

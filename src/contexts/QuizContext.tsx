@@ -45,6 +45,15 @@ const initialState: State = {
   secondsPerQuestion: 20,
 };
 
+interface QuizContextType extends State {
+  dispatch: (action: ActionType) => void; // replace 'any' with the type of your actions
+  question: Question;
+  numQuestions: number;
+  maxPossiblePoints: number;
+}
+
+const QuizContext = createContext<QuizContextType | null>(null);
+
 const reducer = function (state: State, action: ActionType): State {
   switch (action.type) {
     case 'dataReceived':
@@ -100,15 +109,6 @@ const reducer = function (state: State, action: ActionType): State {
       throw new Error('Unknow action in reducer function');
   }
 };
-
-interface QuizContextType extends State {
-  dispatch: (action: ActionType) => void; // replace 'any' with the type of your actions
-  question: Question;
-  numQuestions: number;
-  maxPossiblePoints: number;
-}
-
-const QuizContext = createContext<QuizContextType | null>(null);
 
 interface QuizProviderProps {
   children: ReactNode;
