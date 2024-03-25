@@ -179,7 +179,7 @@ function useQuiz() {
 
   if (context === null)
     throw new Error(
-      `Quiz context wzsz not properly initialized. It's value is null`
+      `Quiz context was not properly initialized. It's value is null`
     );
 
   return context;
