@@ -106,7 +106,7 @@ const reducer = function (state: State, action: ActionType): State {
           : null,
       };
     default:
-      throw new Error('Unknow action in reducer function');
+      throw new Error('Unknow action in QuizContext reducer function');
   }
 };
 
@@ -115,26 +115,14 @@ interface QuizProviderProps {
 }
 
 function QuizProvider({ children }: QuizProviderProps) {
-  const [state, dispatch] = useReducer<React.Reducer<State, ActionType>>(
-    reducer,
-    initialState
-  );
-  const {
-    questions,
-    status,
-    index,
-    answer,
-    points,
-    highScore,
-    secondsRemaining,
-    secondsPerQuestion,
-  } = state;
-  const numQuestions = questions.length;
-  const maxPossiblePoints = questions.reduce(
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const numQuestions = state.questions.length;
+  const maxPossiblePoints = state.questions.reduce(
     (acc: number, current: Question) => acc + current.points,
     0
   );
-  const question = questions[index];
+  const question = state.questions[state.index];
 
   useEffect(function () {
     const fetchData = async function () {
@@ -153,18 +141,11 @@ function QuizProvider({ children }: QuizProviderProps) {
   return (
     <QuizContext.Provider
       value={{
+        ...state,
         dispatch,
-        status,
-        questions,
         question,
-        index,
-        answer,
-        points,
-        highScore,
-        secondsRemaining,
         numQuestions,
         maxPossiblePoints,
-        secondsPerQuestion,
       }}
     >
       {children}
@@ -172,7 +153,7 @@ function QuizProvider({ children }: QuizProviderProps) {
   );
 }
 
-function useQuiz() {
+function useQuiz(): QuizContextType {
   const context = useContext(QuizContext);
   if (context === undefined)
     throw new Error(`useQuiz was used outside of QuizProvider`);
